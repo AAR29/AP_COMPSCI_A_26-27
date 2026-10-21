@@ -14,21 +14,32 @@ public class Constructors_3_9 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // 1. Create course w/ full constructor (at least 3 objects required)
-        Course course1 = new Course("Computer Science", "AP CSA", 234, "Mr. Nelson");
+        // 1. Create a course using the full object constructor
+        Course course1 = new Course("Computer Science", "AP CSA", 1000, "Mr. Nelson");
 
-        // 2. Name-only constructor, then update values using setters
+        // 2. Create a course using the name-only constructor, updated via setters
         Course course2 = new Course("Sciences");
         course2.setCourseCode("AP Physics C");
         course2.setPointsTotal(850);
         course2.setCourseInstructor("Ms. Rafie");
 
-        // 3. Full constructor for the third course (created before printing so it exists)
-        Course course3 = new Course("Mathematics", "AP Calculus BC", 900, "Mr. Dahms");
+        // Retrieve values using getter methods for course2 as required
+        System.out.println("--- Retrieved via Getters for Course 2 ---");
+        System.out.println("Title: " + course2.getCourseTitle());
+        System.out.println("Code: " + course2.getCourseCode());
+        System.out.println("Points: " + course2.getPointsTotal());
+        System.out.println("Instructor: " + course2.getCourseInstructor());
+        System.out.println();
+
+        // 3. Create a third course using the full object constructor
+        Course course3 = new Course("Physics", "AP Physics 1", 900, "Dr. Brown");
 
         // Print out each course using toString()
+        System.out.println("--- Course Descriptions (toString) ---");
         System.out.println(course1);
+        System.out.println("-----------------------------");
         System.out.println(course2);
+        System.out.println("-----------------------------");
         System.out.println(course3);
     }
 }
@@ -37,17 +48,17 @@ class Course {
     private String courseTitle;
     private String courseCode;
     private int pointsTotal;
-    private String courseInstructor; 
+    private String courseInstructor;
 
-    // Constructor 1: Full constructor
+    // Constructor 1: Accepts and initializes all instance data
     public Course(String courseTitle, String courseCode, int pointsTotal, String courseInstructor) {
-        this.courseTitle = courseTitle;       
-        this.courseCode = courseCode;        
+        this.courseTitle = courseTitle;
+        this.courseCode = courseCode;
         this.pointsTotal = pointsTotal;
-        this.courseInstructor = courseInstructor;   
+        this.courseInstructor = courseInstructor;
     }
 
-    // Constructor 2: Name-only constructor (Overloaded)
+    // Constructor 2: Accepts course name only
     public Course(String courseTitle) {
         this.courseTitle = courseTitle;
         this.courseCode = "TBD";
