@@ -100,7 +100,7 @@ class Course {
         this.courseInstructor = courseInstructor;
     }
 
-    // toString method (built step-by-step)
+    // toString method
     @Override
     public String toString() {
         String description = "Course Title: " + courseTitle + "\n";
