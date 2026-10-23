@@ -15,6 +15,9 @@ public class Boolean_Expressions_4_1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+       
+
+        
         //making a new scanner: 
         Scanner scan = new Scanner(System.in);
         
@@ -27,36 +30,44 @@ public class Boolean_Expressions_4_1 {
         if (newYear >= 1582) {
         System.out.println("--------------------");
         System.out.println("The Year " + newYear + " is: \n");
-        
 
-        if (newYear % 4 == 0){
+
+        // Divisible by 4 = newYear is a Leap Year
+        if (newYear % 4 == 0) {
             leapYear = true;
             System.out.println("Divisible by 4: True!");
-            System.out.println("Happy Leap Year!");
+            System.out.println("It Might Be A Happy Leap Year!");
             System.out.println("--------------------");
         }else{
             leapYear = false; 
             System.out.println("Divisible by 4: False.");
+            System.out.println("--------------------");
         }
-        
+        if (!(newYear % 100 == 0)) {
+            leapYear = false; 
+            System.out.println("Divisible by 100: False!");
+            System.out.println("Happy Leap Year!");
+            System.out.println("--------------------");
+        }else{
         if (newYear % 100 == 0 && !(newYear % 400 == 0)) {
+             leapYear = false; 
              System.out.println("Divisible by 100: True!");
-             System.out.println("Divisible by 400: False!");
-             System.out.println("Happy Leap Year!");
+             System.out.println("Divisible by 400: False.");
              System.out.println("--------------------");
         }else{
             if (newYear % 100 == 0 && (newYear % 400 == 0)){
-             leapYear = false; 
+             leapYear = true; 
              System.out.println("Divisible by 100: True!");
-             System.out.println("Divisible by 400: True.");
+             System.out.println("Divisible by 400: True!");
+             System.out.println("Happy Leap Year!");
              System.out.println("--------------------");
             }else{
                 System.out.println("Divisible by 100: False.");
-                System.out.println("Divisible by 400: False!");
+                System.out.println("Divisible by 400: False.");
                 System.out.println("--------------------");
             }
         }
-        
+        }
         }else{
             leapYear = false;
             System.out.println("""
@@ -66,7 +77,6 @@ public class Boolean_Expressions_4_1 {
                                Any input value less than 1582
                                (the year the Gregorian calendar was adopted)
                                is invalid
-                               
                                --------------------
                                """);
         }
