@@ -43,8 +43,8 @@ public class Boolean_Expressions_4_1 {
             System.out.println("Divisible by 4: False.");
             System.out.println("--------------------");
         }
-        if (!(newYear % 100 == 0)) {
-            leapYear = false; 
+        if (newYear % 4 == 0 && !(newYear % 100 == 0)) {
+            leapYear = true; 
             System.out.println("Divisible by 100: False!");
             System.out.println("Happy Leap Year!");
             System.out.println("--------------------");
