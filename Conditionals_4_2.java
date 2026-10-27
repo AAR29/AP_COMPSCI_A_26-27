@@ -42,9 +42,10 @@ class MyStore {
         while (true) {
             System.out.print("\nEnter item name (or type 'exit' to quit): ");
             String inputName = scanner.nextLine().trim();
+            //trim >>> disregards white space/spaces
 
             // Check exit condition
-            if (inputName.equalsIgnoreCase("exit")) {
+            if (inputName.equalsIgnoreCase("exit")) { //equals ignore upper/lower-case >>> 
                 System.out.println("""
                                     _______________________
                                     
